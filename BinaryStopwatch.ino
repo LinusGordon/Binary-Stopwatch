@@ -1,6 +1,8 @@
 /* 
  *  Binary Stopwatch w/ Jeopardy Theme 
- *  
+ *  Linus Gordon and Tom Wang
+ *  Comp50: Wearable Devices
+ *  February 16, 2016
  */
 
 #include <PinChangeInt.h>
