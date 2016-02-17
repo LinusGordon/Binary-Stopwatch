@@ -5,7 +5,7 @@
  *  February 16, 2016
  */
 
-#include <PinChangeInt.h>
+#include <PinChangeInt.h> // used for button interruption
 
 // Arduino Pins for Shift Register inputs, a button,
 // and a piezzo speaker
