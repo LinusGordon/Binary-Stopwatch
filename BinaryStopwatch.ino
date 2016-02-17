@@ -3,6 +3,13 @@
  *  Linus Gordon and Tom Wang
  *  Comp50: Wearable Devices
  *  February 16, 2016
+ *
+ * This program uses a shift register to light up the LEDs in the
+ * binary stopwatch. When the stopwatch is not going, the Jeopardy
+ * theme song plays, waiting for the user to press the button in order
+ * to start the clock. The user can then pause the clock by pressing the 
+ * same button. A Light Blue Bean was also used to help control the 
+ * shift register, button, and piezzo speaker.
  */
 
 #include <PinChangeInt.h> // used for button interruption
@@ -135,10 +142,11 @@ void loop() {
   
   if (button_pushed) {
       button_pushed = false;
+      /* Binary Clock */
       for (int num = 0; num < 256; num++) {
          digitalWrite(RCLK, LOW);
-         shiftOut(SER, SRCLK, MSBFIRST, num);  
-         digitalWrite(RCLK, HIGH);
+         shiftOut(SER, SRCLK, MSBFIRST, num); // shift out bits
+         digitalWrite(RCLK, HIGH); // turn on LEDs
          delay(1000); // 1000 milliseconds in a second
 
           // stop timer when pushed again
